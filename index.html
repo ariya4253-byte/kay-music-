@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090d">
+<title>KAY MUSIC — Your sound, your space</title>
+<style>
+:root{--bg:#09090d;--panel:#121219;--panel2:#191923;--line:#292936;--text:#f5f5fa;--muted:#9b9bad;--accent:#a78bfa;--accent2:#7c3aed}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% -10%,#2c1850 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;padding-bottom:105px}
+button,input{font:inherit}button{cursor:pointer;border:0} .app{max-width:1250px;margin:auto;padding:22px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1.3px}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#c4b5fd,#7c3aed);color:#10091c;font-size:22px}
+.pill{border:1px solid var(--line);color:var(--muted);padding:8px 12px;border-radius:99px;font-size:12px}
+.hero{background:linear-gradient(115deg,#211538,#171321 55%,#121219);border:1px solid #3b2a55;border-radius:24px;padding:28px;display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center;overflow:hidden}.eyebrow{color:#c4b5fd;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(30px,5vw,54px);line-height:1.03;margin:12px 0}.hero p{color:#c4c1d3;max-width:510px}.hero-art{min-height:175px;display:grid;place-items:center;font-size:100px;filter:drop-shadow(0 12px 30px #0008)}
+.import{display:flex;gap:8px;margin-top:20px;max-width:650px}.import input,.search{background:#0d0d13;border:1px solid #393345;color:var(--text);border-radius:12px;padding:13px 14px;min-width:0;outline:none}.import input{flex:1}.import input:focus,.search:focus{border-color:var(--accent)}.primary{background:var(--accent);color:#170d29;font-weight:800;padding:12px 16px;border-radius:12px}.primary:hover{background:#c4b5fd}.hint{font-size:12px;color:var(--muted);margin-top:8px}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 16px}.toolbar h2{margin:0;font-size:22px}.search{width:min(100%,300px)}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.chip{padding:8px 13px;border-radius:99px;background:var(--panel);color:var(--muted);border:1px solid var(--line)}.chip.active{background:#302044;color:#e9ddff;border-color:#7051a3}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.card{background:var(--panel);border:1px solid #20202b;border-radius:17px;padding:13px;min-width:0;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#51406c}.cover{aspect-ratio:1;border-radius:12px;display:grid;place-items:center;font-size:45px;background:linear-gradient(135deg,#302044,#171720);margin-bottom:12px;overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}.track-title{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.artist{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-actions{display:flex;gap:8px;margin-top:12px}.small{padding:8px 10px;border-radius:10px;background:var(--panel2);color:var(--text);flex:1}.small.play{background:#a78bfa;color:#160b25;font-weight:800}.empty{border:1px dashed #383845;border-radius:16px;padding:28px;text-align:center;color:var(--muted);grid-column:1/-1}
+footer{position:fixed;bottom:0;left:0;right:0;background:#101016f2;backdrop-filter:blur(20px);border-top:1px solid var(--line);padding:12px 20px;z-index:5}.player{max-width:1250px;margin:auto;display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:center;gap:18px}.now{display:flex;align-items:center;gap:10px;min-width:0}.mini-cover{width:46px;height:46px;border-radius:10px;background:var(--panel2);display:grid;place-items:center;flex-shrink:0}.now-info{min-width:0}.now-info strong,.now-info span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.now-info span{font-size:12px;color:var(--muted)}.controls{display:flex;align-items:center;justify-content:center;gap:14px}.control{background:transparent;color:var(--text);font-size:20px}.control.main{width:42px;height:42px;border-radius:50%;background:var(--text);color:#111;font-size:17px}.timeline{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:11px}.timeline input{width:100%;accent-color:var(--accent)}.volume{display:flex;justify-content:flex-end;align-items:center;gap:8px}.volume input{width:100px;accent-color:var(--accent)}.file-label{display:inline-block}.hidden{display:none!important}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero-art{display:none}.player{grid-template-columns:1fr 1fr}.volume{display:none}.timeline{grid-column:1/-1;grid-row:2}.controls{justify-content:flex-end}.app{padding:15px}.hero{padding:22px}.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%}}
+@media(max-width:420px){.grid{gap:10px}.card{padding:9px}.player{gap:8px}.controls{gap:8px}.now-info strong{max-width:125px}.brand{font-size:13px}.import{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">♫</div><span>KAY MUSIC</span></div><div class="pill">AD-FREE EXPERIENCE · V1</div></header>
+<section class="hero">
+<div><div class="eyebrow">Your sound, your space</div><h1>Musik pilihan lu.<br>Ruang milik lu.</h1><p>Putar file audio sendiri, susun koleksi, dan bikin playlist tanpa iklan dari website ini. Sederhana, gelap, dan nggak banyak tingkah.</p>
+<form class="import" id="importForm"><input id="urlInput" type="url" placeholder="Tempel URL audio langsung (.mp3, .ogg, .wav)..." aria-label="URL audio"><button class="primary" type="submit">+ Impor audio</button></form>
+<div class="hint">Catatan: link Spotify bukan file audio langsung. URL harus mengarah ke audio yang boleh diputar, atau impor file dari perangkat.</div>
+</div><div class="hero-art">♫</div>
+</section>
+<div class="toolbar"><h2>Library lu</h2><input class="search" id="search" placeholder="Cari lagu atau artis..." aria-label="Cari lagu"></div>
+<div class="chips"><button class="chip active" data-filter="all">Semua</button><button class="chip" data-filter="local">File lokal</button><button class="chip" data-filter="url">URL audio</button><label class="chip file-label">＋ Pilih file <input id="fileInput" class="hidden" type="file" accept="audio/*" multiple></label></div>
+<section class="grid" id="library"></section>
+</div>
+<footer><div class="player">
+<div class="now"><div class="mini-cover" id="miniCover">♫</div><div class="now-info"><strong id="nowTitle">Belum ada lagu</strong><span id="nowArtist">Pilih audio untuk mulai</span></div></div>
+<div><div class="controls"><button class="control" id="prev" aria-label="Lagu sebelumnya">⏮</button><button class="control main" id="toggle" aria-label="Putar atau jeda">▶</button><button class="control" id="next" aria-label="Lagu berikutnya">⏭</button></div><div class="timeline"><span id="currentTime">0:00</span><input type="range" id="seek" min="0" max="100" value="0" aria-label="Posisi lagu"><span id="duration">0:00</span></div></div>
+<div class="volume"><span>♪</span><input type="range" id="volume" min="0" max="1" step=".01" value=".8" aria-label="Volume"></div>
+</div></footer>
+<audio id="audio" preload="metadata"></audio>
+<script>
+const $=id=>document.getElementById(id);
+const audio=$('audio');
+let tracks=[], current=-1, filter='all', objectUrls=[];
+const savedKey='kayMusicTracksV1';
+function time(s){if(!Number.isFinite(s)||s<0)return '0:00';return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')}
+function save(){try{localStorage.setItem(savedKey,JSON.stringify(tracks.filter(t=>t.kind==='url').map(({title,artist,src,kind})=>({title,artist,src,kind}))))}catch(e){}}
+function render(){
+ const q=$('search').value.toLowerCase().trim();const list=$('library');list.innerHTML='';
+ const shown=tracks.map((t,i)=>({...t,i})).filter(t=>(filter==='all'||t.kind===filter)&&(`${t.title} ${t.artist}`.toLowerCase().includes(q)));
+ if(!shown.length){list.innerHTML='<div class="empty">Belum ada lagu di sini. Impor URL audio langsung atau pilih file dari perangkat lu.</div>';return}
+ shown.forEach(t=>{const card=document.createElement('article');card.className='card';
+ const cover=document.createElement('div');cover.className='cover';cover.textContent='♫';
+ const title=document.createElement('div');title.className='track-title';title.textContent=t.title;
+ const artist=document.createElement('div');artist.className='artist';artist.textContent=t.artist|| (t.kind==='local'?'File lokal':'Audio URL');
+ const actions=document.createElement('div');actions.className='card-actions';
+ const play=document.createElement('button');play.className='small play';play.textContent='▶ Putar';play.onclick=()=>playTrack(t.i);
+ const del=document.createElement('button');del.className='small';del.textContent='Hapus';del.onclick=()=>removeTrack(t.i);
+ actions.append(play,del);card.append(cover,title,artist,actions);list.append(card);
+ });
+}
+function addTrack(track){tracks.push(track);save();render()}
+function playTrack(i){if(i<0||i>=tracks.length)return;current=i;const t=tracks[i];audio.src=t.src;audio.play().then(()=>{$('toggle').textContent='Ⅱ'}).catch(()=>{$('toggle').textContent='▶';alert('Audio gagal diputar. Periksa URL, koneksi, atau izin akses sumber audio.')});$('nowTitle').textContent=t.title;$('nowArtist').textContent=t.artist|| (t.kind==='local'?'File lokal':'Audio URL');$('miniCover').textContent='♫';}
+function removeTrack(i){if(i===current){audio.pause();audio.removeAttribute('src');current=-1;$('nowTitle').textContent='Belum ada lagu';$('nowArtist').textContent='Pilih audio untuk mulai';$('toggle').textContent='▶'}tracks.splice(i,1);save();render()}
+function move(dir){if(!tracks.length)return;let next=current+dir;if(next>=tracks.length)next=0;if(next<0)next=tracks.length-1;playTrack(next)}
+$('importForm').addEventListener('submit',e=>{e.preventDefault();const src=$('urlInput').value.trim();if(!src)return;try{const u=new URL(src);if(!['http:','https:'].includes(u.protocol))throw Error();}catch{alert('Masukkan URL http atau https yang valid.');return}
+ const path=new URL(src).pathname.split('/').pop()||'Audio dari URL';const title=decodeURIComponent(path).replace(/\.(mp3|ogg|wav|m4a|aac|flac|opus)$/i,'').replace(/[_-]/g,' ');
+ addTrack({title,artist:'Audio URL',src,kind:'url'});$('urlInput').value='';});
+$('fileInput').addEventListener('change',e=>{[...e.target.files].forEach(file=>{const src=URL.createObjectURL(file);objectUrls.push(src);addTrack({title:file.name.replace(/\.[^.]+$/,''),artist:'File lokal · '+(file.type||'audio'),src,kind:'local'})});e.target.value='';});
+$('search').addEventListener('input',render);document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));render()}));
+$('toggle').onclick=()=>{if(!audio.src){if(tracks.length)playTrack(0);return}if(audio.paused)audio.play().then(()=>$('toggle').textContent='Ⅱ');else{audio.pause();$('toggle').textContent='▶'}};
+$('prev').onclick=()=>move(-1);$('next').onclick=()=>move(1);audio.addEventListener('ended',()=>move(1));audio.addEventListener('timeupdate',()=>{$('currentTime').textContent=time(audio.currentTime);$('duration').textContent=time(audio.duration);if(audio.duration)$('seek').value=audio.currentTime/audio.duration*100});$('seek').addEventListener('input',()=>{if(audio.duration)audio.currentTime=Number($('seek').value)/100*audio.duration});$('volume').addEventListener('input',()=>audio.volume=Number($('volume').value));audio.volume=.8;
+try{const old=JSON.parse(localStorage.getItem(savedKey)||'[]');tracks=old.filter(t=>t.src&&t.kind==='url')}catch(e){}render();
+</script>
+</body>
+</html>
